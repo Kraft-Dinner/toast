@@ -14,7 +14,8 @@ export default function Notification() {
     const handleServerMsg = (postData) => {
         setPost({
             ...post,
-            ...postData
+            ...postData,
+            liked: true
         });
     };
 
@@ -26,8 +27,13 @@ export default function Notification() {
     }, [post]);
 
     const handleLike = () => {
-        saveLikedFormSubmission(post);
-        setOpen(false);
+        saveLikedFormSubmission(post)
+        .then(() => {
+            setOpen(false);
+        })
+        .catch((err) => {
+            console.log(err.message)
+        });
     };
 
     const handleClose = (event, reason) => {
