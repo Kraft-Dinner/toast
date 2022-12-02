@@ -1,3 +1,13 @@
+# Current state and what still needs to be done
+Functionally the project, as it currently stands, should meet all of the requirements requested but there can definitely be a lot of polish added.
+
+If I were to continue on this project, I would work on the additional steps below:
+* Add proper error handling in - retrying operations on server error.
+* Add a "loading" status so we can inform the user when we are busy processing their actions instead of just sitting there (ie. make the site feel more responsive).
+* Add style (and operations) to the form submissions so that they each look like and act like singular interactable components instead of being just a text list.
+* Style the toast content to be nicely formatted.
+* **ADD MORE TESTS!**
+<hr>
 # Toast Exercise
 
 Welcome to the toast exercise! We just got a new project from the Product team to implement
