@@ -1,21 +1,32 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Snackbar from '@mui/material/Snackbar';
 import Close from '@mui/icons-material/Close';
 
-import { onMessage } from './service/mockServer';
-import { useState } from 'react';
+import { onMessage, saveLikedFormSubmission } from './service/mockServer';
+import { useState, useEffect } from 'react';
 
 export default function Notification() {
     const [open, setOpen] = useState(false);
+    const [post, setPost] = useState({});
 
-    const handleServerMsg = () => {
-        setOpen(true);
+    const handleServerMsg = (postData) => {
+        setPost({
+            ...post,
+            ...postData
+        });
     };
 
+    useEffect(() => {
+        if (Object.keys(post).length === 0) {
+            return;
+        }
+        setOpen(true);
+    }, [post]);
+
     const handleLike = () => {
-        console.log("Post was liked");
+        saveLikedFormSubmission(post);
         setOpen(false);
     };
 
@@ -51,7 +62,7 @@ export default function Notification() {
             <Snackbar
                 open={open}
                 onClose={handleClose}
-                message="Testing"
+                message={(Object.keys(post).length === 0) ? '' : post.data.firstName}       // FIX: Replace this with formatted content and remove conditional - Testing only
                 action={likeAction}
             />
         </div>
