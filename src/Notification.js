@@ -26,7 +26,7 @@ export default function Notification({isOpen, postData, onLike, onClose}) {
         <div>
             <Snackbar
                 open={isOpen}
-                message={(postData === undefined) ? '' : postData.firstName}
+                message={(postData === undefined) ? '' : `${postData.firstName} ${postData.lastName} - ${postData.email}`}
                 action={likeAction}
             />
         </div>
