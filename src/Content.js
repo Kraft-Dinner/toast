@@ -45,8 +45,7 @@ export default function Content() {
   };
 
   const handleLike = () => {
-    let updatedPostData = {...newPostData, data: {...newPostData.data, liked: true}};
-    console.log({updatedPostData});
+    const updatedPostData = {...newPostData, data: {...newPostData.data, liked: true}};
     saveLikedFormSubmission(updatedPostData)
     .then(() => {
         setToastOpen(false);

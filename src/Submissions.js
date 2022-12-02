@@ -3,8 +3,6 @@ import { Typography } from '@mui/material';
 
 export default function Submissions(props) {
 
-    console.log(props.posts)
-
     return (
         <>
             {props.posts.map((post) => (
