@@ -8,6 +8,18 @@ If I were to continue on this project, I would work on the additional steps belo
 * Style the toast content to be nicely formatted.
 * **ADD MORE TESTS!**
 <hr>
+
+# Test Cases
+
+* When the "New Submission" button is clicked, ensure that a Notification appears with the correct information
+* Ensure when the "Close" button on a notification is clicked, the notification disappears
+* Ensure when the "Close" button on a notification is clicked, the submission information does not appear in the submission list
+* Ensure when the "Like" button on a notifiation is clicked, the notification disappears
+* Ensure when the "Like" button on a notification is clicked, the submission information appears in the submission list
+* Ensure when a click happens outside of the notification, the notification does not disappear
+* Ensure that a submission with `liked: False` does not appear in the submission list
+
+<hr>
 # Toast Exercise
 
 Welcome to the toast exercise! We just got a new project from the Product team to implement
